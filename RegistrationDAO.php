@@ -12,8 +12,6 @@
 		$email = $_POST['email'];
 		$pass = $_POST['password'];
 		
-		//$verificationcode = substr(md5(uniqid(rand(), true)), 16, 16);
-		
 		$pass = password_hash($pass, PASSWORD_BCRYPT);
 		
 		include "../include/config.php";
