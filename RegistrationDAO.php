@@ -12,7 +12,7 @@
 		$email = $_POST['email'];
 		$pass = $_POST['password'];
 		
-		$verificationcode = substr(md5(uniqid(rand(), true)), 16, 16);
+		//$verificationcode = substr(md5(uniqid(rand(), true)), 16, 16);
 		
 		$pass = password_hash($pass, PASSWORD_BCRYPT);
 		
@@ -29,7 +29,7 @@
 		
 		$sql = "INSERT INTO `tbl_user`".
 			   " values ".
-			   "('$firstname', '$lastname', '$email', '$pass', NOW(), '$verificationcode', '1')";
+			   "('$firstname', '$lastname', '$email', '$pass', NOW())";
 		
 		if(mysqli_query($connection, $sql)) {
 			echo '<script type="text/javascript">';
