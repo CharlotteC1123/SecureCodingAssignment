@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Adopt a pet </title>
+    	<link href="../css/styles.css" type="text/css" rel = "stylesheet"/>
+		
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+		
+			<header>
+				
+				<nav>
+					<ul>
+						<!--links for nav bar-->
+						<li><a href="../LoginPage/Login.html">LOGIN</a></li>
+						<li><a href="../RegistrationPage/Registration.html" class="current">REGISTRATION</a></li>
+						</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section>
+				<!--form for user to register-->
+				<div class = "container">
+					<form id="formUserRegistration" >
+						<h2> To register, fill out the form below and click the Submit button </h2> <br> <br>
+					
+						<label> First name: </label>
+						<input type="text" id = "txtFirstName" name="firstName" required="required"> <br> <br>
+	
+						<label> Last name: </label>
+						<input type="text" id = "txtLastName" name="lastName" required="required"> <br> <br>
+	
+						<label> Email: </label>
+						<input type="email" id = "txtEmail" name="email" required="required"> <br> <br>
+	
+						<label for="psw">Password</label>
+						<input type="password" id="txtPassword" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+	
+						<input type="submit" id = "btnRegister" value="Register">
+						
+					</form>
+				</div>
+				<div id="message">
+					<!-- Password requirements -->
+					<h3>Password must contain the following:</h3>
+					<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+					<p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+					<p id="number" class="invalid">A <b>number</b></p>
+					<p id="length" class="invalid">Minimum <b>8 characters</b></p>
+				  </div>
+				 
+			</section>
+			<script src="./Registration.js"></script>
+			<footer>
+				&copy; 2022
+			</footer>
+			
+			
+			
+	</body>
+</html>

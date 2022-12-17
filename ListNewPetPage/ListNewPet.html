@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Adopt a pet </title>
+    	<link href="../css/styles.css" type="text/css" rel = "stylesheet"/>
+		
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+		
+			<header>
+				
+				<nav>
+					<ul>
+						<!--links for nave bar-->
+						<li><a href="../ListNewPetPage/ListNewPet.html">LIST AN ANIMAL FOR ADOPTION</a></li>
+						<li><a href="../AdoptAPetPage/AdoptAPet.html">ADOPT</a></li>
+						<li><a href="../AnimalGallery/AnimalGallery.php">GALLERY</a></li>
+						<li><a href="../LoginPage/Login.html">LOGIN</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section>
+				<div id="divMessage"></div>
+				<form id="formListPet" >
+					<strong id="linkLogout"><a href="">Log Out</a></strong>
+					<h2> To list an animal, fill out the form below and click the Submit button </h2> <br> <br>
+					
+					<label> Pet category: </label>
+					<input type="text" id = "txtPetCategory" name="petCategory" required="required"> <br> <br>
+
+					<label> Pet name: </label>
+					<input type="text" id = "txtPetName" name="petName" required="required"> <br> <br>
+					
+					<label> Pet description: </label>
+					<textarea id = "txtPetDescription" name="petDescription" form="formListPet"></textarea> <br> <br>
+	
+					<input type="submit" id = "btnAddPet" value="Add Pet">
+
+					
+				</form>  
+			</section>
+			
+			<footer>
+				&copy; 2022 
+			</footer>
+			<!-- call js script-->
+			<script src="./ListNewPet.js"></script>
+			
+	</body>
+</html>
