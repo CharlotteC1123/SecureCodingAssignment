@@ -39,6 +39,18 @@ CREATE TABLE `tbl_bank_details` (
   `CVV` varchar(200) NOT NULL
 ) ENGINE=InnoDB;
 
+CREATE TABLE `pictures` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+`OwnerName` CHAR( 25 ) NOT NULL ,
+`PetDesc` CHAR( 255 ) NOT NULL ,
+`PFileType` CHAR( 75 ) NOT NULL ,
+`PFileName` CHAR( 255 ) NOT NULL ,
+`PFileData` LONGBLOB NOT NULL ,
+PRIMARY KEY ( `id` )
+);
+
+
+
 ALTER TABLE tbl_pet
 ADD FOREIGN KEY (Owner_Email) REFERENCES tbl_user(email);
 

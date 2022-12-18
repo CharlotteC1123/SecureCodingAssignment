@@ -22,6 +22,7 @@
 						<!--links for nav bar -->
 						<li><a href="../ListNewPetPage/ListNewPet.html">LIST AN ANIMAL FOR ADOPTION</a></li>
 						<li><a href="../AdoptAPetPage/AdoptAPet.html">ADOPT</a></li>
+						<li><a href="../CutestPet/CutestPet.php">CUTEST PET UPLOAD</a></li>
 						<li><a href="../LoginPage/Login.html">LOGIN</a></li>
 					</ul>
 				</nav>

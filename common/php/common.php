@@ -1,12 +1,12 @@
 <?php
 
-if(isset($_POST['phpFunction'])) {
-		if($_POST['phpFunction'] == 'checkLogin') {
-			checkLogin();
-		} elseif($_POST['phpFunction'] == 'logout') {
-			logout();
-		}
-}
+//if(isset($_POST['phpFunction'])) {
+//		if($_POST['phpFunction'] == 'checkLogin') {
+//			checkLogin();
+//		} elseif($_POST['phpFunction'] == 'logout') {
+//			logout();
+//		}
+//}
 
 function logout () {
 	session_start();
@@ -21,13 +21,13 @@ function logout () {
 }
 
 //check to see if the user is logged in
-//function checkLogin() {
-	//session_start();
-	//$uName = $_SESSION['uName'];
-	//if( isset( $uName ) ) {
-		//echo 'true';
-	//} else {
-	//	echo 'false';
-	//}
-//}
+function checkLogin() {
+	session_start();
+	$uName = $_SESSION['uName'];
+	if( isset( $uName ) ) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
 ?>

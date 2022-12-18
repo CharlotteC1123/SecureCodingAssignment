@@ -26,7 +26,7 @@ $('#formUserLogin').submit(function(event){
 					$("#divError").css('display', 'inline', 'important');
 					$("#divError").html("Wrong username or password");
 				}else    {					
-					$("#divError").html("right username or password");
+					$("#divError").html("right username and password");
 					dataJson = JSON.parse(data);
 					firstName = dataJson['First_Name'];
 					lastName = dataJson['Last_Name'];
