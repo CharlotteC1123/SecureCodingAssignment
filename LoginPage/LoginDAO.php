@@ -1,39 +1,38 @@
 <?php
-require_once '../include/config.php';
-require_once '../common/php/common.php';
 
+include '../include/config.php';
+include '../common/php/common.php';
 
-if(isset($_POST['phpFunction'])) {
-    if($_POST['phpFunction'] == 'login') {
-        login();
-    }
-}
-//get user data from the database
-function login() {
-
-	session_start();
-	$uName = $_POST['userName'];
-	$pWord = $_POST['password'];
-	
-	$pass_hash = "SELECT `password` FROM `tbl_user` WHERE email='".$uName."'";
-	$verify = password_verify($pWord, $pass_hash);
-	//what should it be for email or password in the set statement?ac
-	$sql = "SELECT `First_Name`, `Last_Name` FROM `tbl_user` WHERE email='".$uName."'";
-	PreparedStatement statement = connection.prepareStantement(sql);
-	statement.setEmail(1, $uName);
-	ResultSet rs = statement.executeQuery();
-
-	include "../include/config.php";
-	
-	$res = mysqli_query($connection, $sql);
-	$num_row = mysqli_num_rows($res);
-	$row=mysqli_fetch_assoc($res);
-	if( $num_row == 1 ) {
-		echo json_encode($row);
+session_start();// starts the session
+  
+$Email = $_POST['userName']; //gets the email input 
+$pass = $_POST['pass']; //get the password input
+ 
+$query = "SELECT * FROM tbl_user WHERE email='".$Email."'"; // finds row with the email mataching user email
+$tbl = mysqli_query($connection,$query);
+if(mysqli_num_rows($tbl)>0){//if there is an email in the database same as what was entered
+	$row = mysqli_fetch_array($tbl); // looks through returned data
+    $pass_hash = $row['Password'];
+    if(password_verify($pass, $pass_hash)){ // if the password matches the hash from database 
+        //logs user into website 
+        $First = $row['First_Name'];
+        $uName =$row['Email'];
+        $_SESSION['firstName'] = $First;
 		$_SESSION['uName'] = $uName;
-	}
-	else {
-		echo 'false';
-	}
-}		
+		echo "<script language='javascript'>";
+        echo 'alert("Successful login");';//lets user know 
+        echo 'window.location.replace("AlreadyLoggedIn.html");';
+        echo "</script>";
+	}else {//unsuccessful login
+        echo "<script language='javascript'>";
+        echo 'alert("Invalid Email or Password");';
+        echo 'window.location.replace("Login.html");';
+        echo "</script>";
+    }
+}else {//invalid email
+        echo "<script language='javascript'>";
+        echo 'alert("Invalid Email or Password");';
+        echo 'window.location.replace("Login.html");';
+        echo "</script>";
+    }
 ?>

@@ -29,16 +29,16 @@
 				<div id="divMessage"></div>
 					<!-- logout button-->
 					<strong id="linkLogout"><a href="">Log Out</a></strong> <br><br>
-                    <form method="post" action="CutestPetDAO.php" enctype="multipart/form-data">
+                    <form method="post" action="CutestPetDAO.php" enctype="multipart/form-data" id="formCutestPet">
 						<!--Form for user to enter details and picture of their pet-->	
-						<h2>Please enter a picture of your pet to win cutest pet :</h2>
+						<h2>Please enter a picture of your pet to win cutest pet:</h2>
 						<label>Your Name: </label>
 						<input type="text" maxlength="25" name="pname"><br> <br>
 						<label>Description: </label>
 						<input type="text" maxlength="255" name="pdesc"><br> <br>
-						<input type="hidden" name="MAX_FILE_SIZE" value="250000">
-						<label for="file">Picture</label>
-    		    		<input type="file" class="form-control-file" name="pfile"> <br> <br>
+						<label for="file">Picture (less than 250Kb):</label>
+						<!--Allows only certain types of file to be uploaded-->
+    		    		<input type="file" class="form-control-file" accept=".jfif, .jpg, .png, .gif, .webp" name="pfile"> <br> <br>
 						<input type="submit" name="Submit">
 					</form>
 			</section>	

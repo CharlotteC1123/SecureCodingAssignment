@@ -1,56 +1,47 @@
-<html>
+<head>
+	<meta charset="utf-8">
+        <title> Adopt a pet </title>
+        <link href="../css/styles.css" type="text/css" rel = "stylesheet"/>
+        
+        <script
+              src="https://code.jquery.com/jquery-3.3.1.js"
+              integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+              crossorigin="anonymous"></script>
 
-	<head>
-		<meta charset="utf-8">
-		<title> Adopt a pet </title>
-		<link href="../css/styles.css" type="text/css" rel = "stylesheet"/>
-		
-		<script
-			  src="https://code.jquery.com/jquery-3.3.1.js"
-			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-			  crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<!--links for the nav bar-->
+				<li><a href="../ListNewPetPage/ListNewPet.html">LIST AN ANIMAL FOR ADOPTION</a></li>
+				<li><a href="../AdoptAPetPage/AdoptAPet.html">ADOPT</a></li>
+				<li><a href="../CutestPet/CutestPet.php">CUTEST PET UPLOAD</a></li>
+				<li><a href="../LoginPage/Login.html">LOGIN</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<h2> Please login </h2>
+		<form name="login" action="LoginDAO.php" method="POST">
 			
-	</head>
+		  
+				  <label>Email:</label>
+				  <input type="email" class="form-control" id="txtUserName" name="userName" required="required">
+				  <br> <br>
+		  
+				  <label>Password:</label>
+				  <input type="password" class="form-control" id="txtPassword" name="pass" required="required">
+				<br><br>
+		  
+				  <input type="submit" class="btn btn-primary" value="Login" />
+			
+		</form>
+		<h4> Create a new account <a href="../RegistrationPage/Registration.html">Click here</a></h4>
+		  
+	</section>
 
-	<body>
 
-		<!-- write comments when necessary!! -->
-		<header>
-				
-			<nav>
-				<ul>
-					<!--links for the nav bar-->
-					<li><a href="../ListNewPetPage/ListNewPet.html">LIST AN ANIMAL FOR ADOPTION</a></li>
-					<li><a href="../AdoptAPetPage/AdoptAPet.html">ADOPT</a></li>
-					<li><a href="../CutestPet/CutestPet.php">CUTEST PET UPLOAD</a></li>
-					<li><a href="../LoginPage/Login.html">LOGIN</a></li>
-				</ul>
-			</nav>
-		</header>
-		
-		<section>
-			<div id="divError"></div>
-		
-			<h2> Please login </h2>
-			<!--login form-->
-			<form id="formUserLogin">
-				<label> Email: </label>
-				<input type="email" id = "txtUserName" name = "userName" required="required"> <br> <br>
-				
-				<label> Password: </label>
-				<input type="password" id = "txtPassword" name = "password" required="required"> <br><br> 
-				
-				<input type="submit" id = "btnLogin" value="Login">
-			</form> 			
-			<h4> Create a new account <a href="../RegistrationPage/Registration.html">Click here</a> </h4>
 
-		</section>
-		
-		<footer>
-			&copy; 2022 
-		</footer>
-		
-		<script src="./Login.js"></script>
-	</body>
 
-</html>
+</body>

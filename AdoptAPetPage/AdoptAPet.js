@@ -37,7 +37,6 @@ $("#linkLogout").click(function(event){
 				console.log("error: " + err);
 			}
 	});
-	
 });
 
 //Show my pets function

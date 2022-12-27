@@ -1,17 +1,10 @@
-
--- --------------------------------------------------------
-
---
--- Drop Tables
---
+-- delete tables if they already exist
 
 DROP TABLE IF EXISTS `tbl_pet`;
 DROP TABLE IF EXISTS `tbl_user`;
+DROP TABLE IF EXISTS `pictures`;
 
---
--- Table structure for table `tbl_user`
---
-
+--create a table for the users
 
 CREATE TABLE `tbl_user` (
   `First_Name` varchar(20) NOT NULL,
@@ -21,9 +14,7 @@ CREATE TABLE `tbl_user` (
   `RegistrationDate` DATE NOT NULL
 ) ENGINE=InnoDB;
 
---
--- Table structure for table `tbl_pet`
---
+--create a table for pet
 
 CREATE TABLE `tbl_pet` (
   `Pet_Category` varchar(20) NOT NULL,
@@ -32,12 +23,10 @@ CREATE TABLE `tbl_pet` (
   `Owner_Email` varchar(50) NOT NULL
 ) ENGINE=InnoDB;
 
-CREATE TABLE `tbl_bank_details` (
-  `Card_Number` varchar(20) NOT NULL,
-  `Card_Name` varchar(20) NOT NULL,
-  `Expiry_Date` DATE NOT NULL,
-  `CVV` varchar(200) NOT NULL
-) ENGINE=InnoDB;
+ALTER TABLE tbl_pet
+ADD FOREIGN KEY (Owner_Email) REFERENCES tbl_user(email);
+
+--create a table for pictures
 
 CREATE TABLE `pictures` (
 `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
@@ -48,10 +37,3 @@ CREATE TABLE `pictures` (
 `PFileData` LONGBLOB NOT NULL ,
 PRIMARY KEY ( `id` )
 );
-
-
-
-ALTER TABLE tbl_pet
-ADD FOREIGN KEY (Owner_Email) REFERENCES tbl_user(email);
-
-

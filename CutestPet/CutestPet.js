@@ -1,14 +1,32 @@
-    //ajax to post data from form and alert user on success
-    e.preventDefault();
-    $.ajax({
-      url: "CutestPetDAO.php",
-      method: "POST",
-      data: formData+"&phpfunction=addPicture",
-      contentType: false,
-      cache: false,
-      processData: false,
-      success: function (echoedMsg) {
-        alert("Picture Successfully Registered");
-        location.reload();
-      }
-    });
+$(document).ready(function(){
+	
+	//check login
+	$.ajax({
+			type: "POST",
+			url: "../common/php/common.php",
+			data: "phpFunction=checkLogin",
+		    success: function(html){ 
+				if(html=='false')    {
+					window.location="../LoginPage/Login.html";
+				}
+		    }
+	});
+	
+	cutestPet();
+});
+function cutestPet(){
+//Event handler for registration form submit 
+$('#formCutestPet').submit(function(event){
+	formData = $('#formCutestPet').serialize();
+    // cancels the form submission
+$.ajax({
+  url: "CutestPetDAO.php",
+  method: "POST",
+  //will call the add picture function
+  data: formData+"&phpfunction=addPicture",
+  contentType: false,
+  cache: false,
+  processData: false,
+});
+});
+}
